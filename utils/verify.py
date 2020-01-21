@@ -1,4 +1,5 @@
-import requests 
+import requests
+# change it to your api keys
 
 
 def verify_payment(amount,currency,externalId,partyId,referenceId,token):

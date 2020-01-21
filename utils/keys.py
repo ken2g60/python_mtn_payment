@@ -2,6 +2,7 @@ import requests, base64
 from basicauth import encode
 from random import randint
 
+# change it to your api keys
 
 
 
