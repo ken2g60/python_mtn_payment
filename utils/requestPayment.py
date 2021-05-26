@@ -13,7 +13,7 @@ def requesttopay(amount, currency, externalId, partyId, referenceId, token):
             'X-Reference-Id': referenceId,
             'X-Target-Environment': 'sandbox',
             'Content-Type': 'application/json',
-            'Ocp-Apim-Subscription-Key': "4d1d6954ec0042e1924b5af8af61a823"
+            'Ocp-Apim-Subscription-Key': "3c73b3a94f1e4a648fa167f40e290a25"
         },
         json ={
             "amount": amount,

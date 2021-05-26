@@ -20,7 +20,7 @@ try:
                         headers={ 
                                 'Content-Type': 'application/json',
                                 'X-Reference-Id': userapi, 
-                                'Ocp-Apim-Subscription-Key' : "4d1d6954ec0042e1924b5af8af61a823"}, 
+                                'Ocp-Apim-Subscription-Key' : "3c73b3a94f1e4a648fa167f40e290a25"}, 
                         json={'providerCallbackHost':'string'})
     print(req.json)
     
@@ -28,7 +28,6 @@ try:
     
     if apiKey != None:
         token = generate_token(userapi, apiKey)
-        print(token)
         if token != None:
             # amount - 
             # currency - EUR (testing) 
@@ -36,8 +35,12 @@ try:
             # partyId - 46733123452 
             # referenceId - uuid 
             #  token -> generated token 
-            pay = requesttopay("2000", "EUR", genrate_transaction(6), "46733123452", userapi, token)
+            pay = requesttopay("1", "EUR", genrate_transaction(6), "233242002367", userapi, token)
             print(pay)
+
+            pay_status = verify_payment(userapi, token)
+
+            print('payment status is----{}'.format(pay_status))
             
 except requests.exceptions.RequestException as e:
     print(e.message)
