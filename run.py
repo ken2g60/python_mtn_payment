@@ -7,6 +7,8 @@ from utils.keys import genrate_transaction
 import requests
 import uuid
 import json
+from utils import literals
+
 
 
 # testing numbers 
@@ -20,9 +22,9 @@ try:
                         headers={ 
                                 'Content-Type': 'application/json',
                                 'X-Reference-Id': userapi, 
-                                'Ocp-Apim-Subscription-Key' : "3c73b3a94f1e4a648fa167f40e290a25"}, 
+                                'Ocp-Apim-Subscription-Key' : literals.Ocp_Apim_Subscription_Key},
                         json={'providerCallbackHost':'string'})
-    print(req.json)
+    print(req.text)
     
     apiKey = apiuser_reference(userapi)
     
@@ -35,7 +37,7 @@ try:
             # partyId - 46733123452 
             # referenceId - uuid 
             #  token -> generated token 
-            pay = requesttopay("1", "EUR", genrate_transaction(6), "233242002367", userapi, token)
+            pay = requesttopay("1", "EUR", genrate_transaction(6), literals.partyId, userapi, token)
             print(pay)
 
             pay_status = verify_payment(userapi, token)

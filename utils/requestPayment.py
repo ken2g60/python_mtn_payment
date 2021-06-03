@@ -1,6 +1,7 @@
 import requests
-# change it to your api keys
 
+# change it to your api keys
+from utils import literals
 
 
 def requesttopay(amount, currency, externalId, partyId, referenceId, token):
@@ -13,7 +14,7 @@ def requesttopay(amount, currency, externalId, partyId, referenceId, token):
             'X-Reference-Id': referenceId,
             'X-Target-Environment': 'sandbox',
             'Content-Type': 'application/json',
-            'Ocp-Apim-Subscription-Key': "3c73b3a94f1e4a648fa167f40e290a25"
+            'Ocp-Apim-Subscription-Key': literals.Ocp_Apim_Subscription_Key
         },
         json ={
             "amount": amount,
@@ -26,7 +27,7 @@ def requesttopay(amount, currency, externalId, partyId, referenceId, token):
             "payerMessage": "change me please",
             "payeeNote": "change me please"
             })
-        return req.status_code
+        return req.text
     except Exception as e:
         print(e)
     except requests.exceptions.RequestException as e:
