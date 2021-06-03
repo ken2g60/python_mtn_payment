@@ -18,4 +18,5 @@ pip-selfcheck.json
 .vscode/
 .idea/
 lib/
+bin/
 # End of https://www.gitignore.io/api/venv
