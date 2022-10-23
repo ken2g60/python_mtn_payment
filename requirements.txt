@@ -6,7 +6,7 @@ idna==2.8
 isort==4.3.21
 lazy-object-proxy==1.4.3
 mccabe==0.6.1
-PyJWT==1.7.1
+PyJWT==2.4.0
 pylint==2.4.4
 requests==2.22.0
 requests-auth==5.0.0
